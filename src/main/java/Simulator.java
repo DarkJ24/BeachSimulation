@@ -98,7 +98,7 @@ public class Simulator {
 
     public static void main(String[] args) {
         try {
-            Container container = DependencyInjector.run(Simulator.class, "src/main/resources/context.xml");
+            Container container = DependencyInjector.run(Simulator.class, "context.xml");
             //Container container = DependencyInjector.run(BeachSimulation1.class);
             runSimulation(container, 10);
         } catch (NoSuchMethodException e) {
