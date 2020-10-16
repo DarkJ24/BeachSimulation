@@ -1,0 +1,34 @@
+<beans>
+    <bean id="beach"
+          scope = "singleton"
+          class="places.Beach">
+        <property name="owner" ref="beachOwner" />
+    </bean>
+    <bean id="restaurant"
+          scope = "prototype"
+          lazyInit="true"
+          initMethod="init"
+          class="places.beach.Restaurant">
+        <constructorArg index="0" ref="menu"/>
+    </bean>
+    <bean id="restingplace"
+          scope = "prototype"
+          lazyInit="true"
+          initMethod="init"
+          class="places.beach.RestingPlace">
+    </bean>
+    <bean id="beachOwner"
+          scope="prototype"
+          autowiringMode="byName"
+          class="people.Owner">
+    </bean>
+    <bean id="visitor"
+          scope = "prototype"
+          class="people.Visitor">
+    </bean>
+    <bean id="menu"
+          scope="prototype"
+          initMethod="init"
+          class="items.Menu">
+    </bean>
+</beans>
